@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Document Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">VerifyBlock</div>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('upload')">Upload</a></li>
+                <li><a href="#" onclick="showPage('verify')">Verify</a></li>
+                <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- Home Page -->
+        <section id="home-page" class="page">
+            <div class="hero">
+                <h1>Secure Your Documents with Blockchain</h1>
+                <p>Verify the authenticity and integrity of your files using Ethereum blockchain technology.</p>
+                <button class="btn" onclick="showPage('upload')">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Upload Page -->
+        <section id="upload-page" class="page" style="display:none;">
+            <h2>Upload Document</h2>
+            <div class="card">
+                <form id="upload-form">
+                    <input type="file" id="upload-file" name="document" required>
+                    <p id="upload-status"></p>
+                    <button type="submit" class="btn">Upload & Hash</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Verify Page -->
+        <section id="verify-page" class="page" style="display:none;">
+            <h2>Verify Document</h2>
+            <div class="card">
+                <form id="verify-form">
+                    <input type="file" id="verify-file" name="document" required>
+                    <button type="submit" class="btn">Check Authenticity</button>
+                </form>
+                <div id="verify-result" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="page" style="display:none;">
+            <h2>Document History</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Hash (SHA-256)</th>
+                            <th>Upload Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="document-list">
+                        <!-- Loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
