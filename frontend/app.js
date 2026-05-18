@@ -22,7 +22,7 @@ document.getElementById('upload-form').addEventListener('submit', async (e) => {
     status.innerText = "Uploading to Blockchain...";
 
     try {
-        const response = await fetch('/upload', {
+        const response = await fetch('https://doc-verify-backend-zgcz.onrender.com/upload', {
             method: 'POST',
             body: formData
         });
@@ -55,7 +55,7 @@ document.getElementById('verify-form').addEventListener('submit', async (e) => {
     resultDiv.className = "result";
 
     try {
-        const response = await fetch('/verify', {
+        const response = await fetch('https://doc-verify-backend-zgcz.onrender.com/verify', {
             method: 'POST',
             body: formData
         });
@@ -79,7 +79,7 @@ async function loadDocuments() {
     listBody.innerHTML = "<tr><td colspan='3'>Loading data...</td></tr>";
 
     try {
-        const response = await fetch('/documents');
+        const response = await fetch('https://doc-verify-backend-zgcz.onrender.com/documents');
         const docs = await response.json();
 
         listBody.innerHTML = "";
